@@ -1,0 +1,17 @@
+.Heading{
+
+    display: flex;  
+    justify-content: center;
+    font-size: 100px;
+    margin-top: 0px;
+    color: rgb(153, 153, 0);
+
+}
+
+.book-section{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
