@@ -10,8 +10,22 @@
 
 .book-section{
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+}
+
+.books{
+
+padding-right: 0px;  
+display: flex;
+justify-content: center;  
+
+
+}
+
+.input-bar-active:focus{
+
+    
 
 }
