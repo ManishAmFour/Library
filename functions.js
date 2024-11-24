@@ -5,12 +5,13 @@ let Book = [{BookName: `The Hobbit`,
 }]
 
 
-let HTML = ``;
-
-
 GenerateThePage();
 
 function GenerateThePage(){
+
+    console.log(`runned`)
+
+    let HTML = ``;
 
 Book.forEach((IndBook)=>{
 
@@ -20,23 +21,38 @@ Book.forEach((IndBook)=>{
     ${IndBook.ReadingStatus}
     </div>`
 
+})
+document.querySelectorAll(`.add-button-books`).forEach((fillIn)=>{
+
+    fillIn.innerHTML = `<div class="books">${HTML}</div>`
+
+
 
 })
 
-document.querySelector(`.book-section`).innerHTML = `<div>${HTML}</div> <button class="books add-button-books">Add New Book</button>`;
 
-document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
+document.querySelector(`.book-section`).innerHTML += `<button class="books add-button-books">Add New Book</button>`;
 
-    if(document.querySelector(`.add-button-books`).innerText === `Add New Book`){
+document.querySelectorAll(`.add-button-books`).forEach((ButtonInput)=>{
+
+ButtonInput.addEventListener(`click`,()=>{
+
+    console.log(`bhgbi`)
+
+    if(ButtonInput.innerText === `Add New Book`){
+
+        console.log(`andar`)
     
-        document.querySelector(`.add-button-books`).innerHTML = `BookName:- <input class="input-bar input-BookName">
+        ButtonInput.innerHTML = `BookName:- <input class="input-bar input-BookName">
         Author:- <input class="input-bar input-Author">
         Pages :- <input class="input-bar input-Pages">
         
         `;
-        document.querySelector(`.input-bar`).focus();
         document.querySelectorAll(`.input-bar`).forEach((input)=>{
     
+            input.focus();
+
+
             input.addEventListener(`keydown`,(event)=>{
     
                 if(event.key === `Enter`){
@@ -50,18 +66,39 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
         
                     console.log(Book)
                     GenerateThePage();
-                
+                    ButtonInput.innerText = `Add New Book`;
+                    //document.querySelector(``)
+
         
                 }
         
         
             })
         
-        })}})
+        })
+    
+
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    })
+    
+
+
+
+
+})
 
 
 
 }
+
 
 
 

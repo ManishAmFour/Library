@@ -24,8 +24,10 @@ justify-content: center;
 
 }
 
-.input-bar-active:focus{
+.book-grid{
 
-    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
 
 }
