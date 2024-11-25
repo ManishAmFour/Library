@@ -19,7 +19,10 @@ document.querySelectorAll(`.add-button-books`).forEach((ButtonInput)=>{
             ButtonInput.innerHTML = `BookName:- <input class="input-bar input-BookName">
             Author:- <input class="input-bar input-Author">
             Pages :- <input class="input-bar input-Pages">
-            <button class="Enter-Button">Enter</button>`;
+            <button class="Enter-Button">Enter</button>
+            <input type="radio" name="options" class="InputSelectors" value="Read"><div>Read</div>
+            <input type="radio" name="options" class="InputSelectors" value="Not Readed"><div>Not Readed</div>
+            `;
             document.querySelectorAll(`.input-bar`).forEach((input)=>{
         
                 input.focus();
@@ -27,6 +30,14 @@ document.querySelectorAll(`.add-button-books`).forEach((ButtonInput)=>{
                 document.querySelectorAll(`.Enter-Button`).forEach((EnterButton)=>{
 
                     EnterButton.addEventListener(`click`,()=>{
+
+                        document.querySelectorAll(`.InputSelectors`).forEach((Selector)=>{
+
+                            console.log(Selector.checked.value)
+
+
+
+                        })
 
 
                      
@@ -88,6 +99,7 @@ function RenderTheBooks(){
 
 
 let TheHtml;
+let Index;
 
 Book.forEach((IndBook,index)=>{
 
@@ -97,23 +109,45 @@ TheHtml = `<div class="Book-formed">
 <div> Book Name: ${IndBook.BookName} </div>
 <div> Book Author: ${IndBook.Author} </div>
 <div> Book page: ${IndBook.Pages} </div>
+<div>Reading Status: </div>
 <button data-delete-no="${index}" class="DeleteButton" > Delete Button </button>
 </div>`
+
+Index = index
  
 })   
 
-  document.querySelector (`.book-section`).innerHTML += `<div class="books ">${TheHtml}</div>`
+  document.querySelector (`.book-section`).innerHTML += `<div class="books" data-index-no="${Index}" >${TheHtml}</div>`
   AddingTheListener();
 
   document.querySelectorAll(`.DeleteButton`).forEach((DeleteButton)=>{
+
 
     DeleteButton.addEventListener(`click`,()=>{
 
         Index = DeleteButton.dataset.deleteNo
 
 
+        document.querySelectorAll(`.books`).forEach((book)=>{
+
+            if(book.dataset.indexNo === Index ){
+            
+                book.remove();
+                
+             }
+
+
+        })
+
+
+
+
+
 
     Book.splice(Index,1)
+
+ 
+
     console.log(Book)
 
     })
