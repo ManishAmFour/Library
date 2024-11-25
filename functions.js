@@ -4,97 +4,123 @@ let Book = [{BookName: `The Hobbit`,
              ReadingStatus : `You've read it!`,
 }]
 
+AddingTheListener();
 
 
-function GenerateThePage(){
 
-    let HTML = ``;
-
-    let indexNo;
-
-Book.forEach((IndBook,index)=>{
-
-    indexNo = index
-
-    HTML = `<div class="HTML-${index}"  data-index-name = "${indexNo}">
-    ${IndBook.BookName}
-    ${IndBook.Author}
-    ${IndBook.ReadingStatus}
-    ${indexNo}
-
-    </div>`}
-
-)
-
-document.querySelectorAll(`.add-button-books`).forEach((fillIn)=>{
-
-    fillIn.innerHTML = `<div class="books">${HTML}</div>`    
-
-})
-
-document.querySelector(`.book-section`).innerHTML += `<button class="books add-button-books">Add New Book</button>`;
+function AddingTheListener(){
 
 document.querySelectorAll(`.add-button-books`).forEach((ButtonInput)=>{
 
-ButtonInput.addEventListener(`click`,()=>{
-
-
-    if(ButtonInput.innerText === `Add New Book`){
-
+    ButtonInput.addEventListener(`click`,()=>{
+            
+        if(ButtonInput.innerText === `Add New Book`){
     
-        ButtonInput.innerHTML = `BookName:- <input class="input-bar input-BookName">
-        Author:- <input class="input-bar input-Author">
-        Pages :- <input class="input-bar input-Pages">
+            ButtonInput.innerHTML = `BookName:- <input class="input-bar input-BookName">
+            Author:- <input class="input-bar input-Author">
+            Pages :- <input class="input-bar input-Pages">
+            <button class="Enter-Button">Enter</button>`;
+            document.querySelectorAll(`.input-bar`).forEach((input)=>{
         
-        `;
-        document.querySelectorAll(`.input-bar`).forEach((input)=>{
+                input.focus();
+
+                document.querySelectorAll(`.Enter-Button`).forEach((EnterButton)=>{
+
+                    EnterButton.addEventListener(`click`,()=>{
+
+
+                     
+                        Book.push({
+                            BookName: document.querySelector(`.input-BookName`).value,
+                            Author:  document.querySelector(`.input-Author`).value,
+                            Pages: document.querySelector(`.input-Pages`).value, 
+                        })
+            
+                        ButtonInput.innerText = `Add New Book`;
+                        RenderTheBooks();
     
-            input.focus();
 
 
-
-            input.addEventListener(`keydown`,(event)=>{
-    
-                if(event.key === `Enter`){
-
-
-
-                
-                    Book.push({
-                        BookName: document.querySelector(`.input-BookName`).value,
-                        Author:  document.querySelector(`.input-Author`).value,
-                        Pages: document.querySelector(`.input-Pages`).value, 
                     })
-        
-                    GenerateThePage();
-                    ButtonInput.innerText = `Add New Book`;
-                    //document.querySelector(``)
 
+
+                })
+
+                input.addEventListener(`keydown`,(event)=>{
         
-                }
-        
-        
+                    if(event.key === `Enter`){
+    
+    
+    
+                     
+                        Book.push({
+                            BookName: document.querySelector(`.input-BookName`).value,
+                            Author:  document.querySelector(`.input-Author`).value,
+                            Pages: document.querySelector(`.input-Pages`).value, 
+                        })
+            
+
+                        ButtonInput.innerText = `Add New Book`;
+                        RenderTheBooks();
+    
+            
+                    }
+            
+            
+                })
+            
             })
         
+       
+        
+        
+        }
+        
         })
-    
-
-    
-    
-    }
-    
-    
-    
-    
-    
-    
+        
     })
-    
+}
+
+
+RenderTheBooks();
+
+function RenderTheBooks(){
+
+
+let TheHtml;
+
+Book.forEach((IndBook,index)=>{
+
+
+TheHtml = `<div class="Book-formed">
+
+<div> Book Name: ${IndBook.BookName} </div>
+<div> Book Author: ${IndBook.Author} </div>
+<div> Book page: ${IndBook.Pages} </div>
+<button data-delete-no="${index}" class="DeleteButton" > Delete Button </button>
+</div>`
+ 
+})   
+
+  document.querySelector (`.book-section`).innerHTML += `<div class="books ">${TheHtml}</div>`
+  AddingTheListener();
+
+  document.querySelectorAll(`.DeleteButton`).forEach((DeleteButton)=>{
+
+    DeleteButton.addEventListener(`click`,()=>{
+
+        Index = DeleteButton.dataset.deleteNo
 
 
 
+    Book.splice(Index,1)
+    console.log(Book)
 
-})
+    })
+
+
+
+  })
 
 
 
@@ -102,7 +128,6 @@ ButtonInput.addEventListener(`click`,()=>{
 
 
 
-GenerateThePage();
 
 
 

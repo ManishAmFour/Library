@@ -12,6 +12,7 @@
 
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    row-gap: 80px;
     
 }
 
@@ -28,6 +29,15 @@ justify-content: center;
 
     display: grid;
     grid-template-columns: repeat(3,1fr);
+
+
+}
+
+.Book-formed{
+
+    display: flex;
+    flex-direction: column;
+
 
 
 }
