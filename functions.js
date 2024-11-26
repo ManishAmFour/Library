@@ -1,96 +1,113 @@
 let Book = [{BookName: `The Hobbit`,
              Author: `J.R.R Tolkien`,   
              Pages: `295 pages`,       
-             ReadingStatus : `You've read it!`,
+             ReadingStatus : `Read`,
 }]
 
 AddingTheListener();
 
-
-
 function AddingTheListener(){
 
-document.querySelectorAll(`.add-button-books`).forEach((ButtonInput)=>{
-
-    ButtonInput.addEventListener(`click`,()=>{
+document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
             
-        if(ButtonInput.innerText === `Add New Book`){
+        if(document.querySelector(`.add-button-books`).innerText === `Add New Book`){
     
-            ButtonInput.innerHTML = `BookName:- <input class="input-bar input-BookName">
-            Author:- <input class="input-bar input-Author">
-            Pages :- <input class="input-bar input-Pages">
-            <button class="Enter-Button">Enter</button>
-            <input type="radio" name="options" class="InputSelectors" value="Read"><div>Read</div>
-            <input type="radio" name="options" class="InputSelectors" value="Not Readed"><div>Not Readed</div>
-            `;
+            let FillForm = document.querySelector(`.fill-form`);
+
+            FillForm.classList.add(`display-list`)
+
+        
             document.querySelectorAll(`.input-bar`).forEach((input)=>{
         
                 input.focus();
 
-                document.querySelectorAll(`.Enter-Button`).forEach((EnterButton)=>{
-
-                    EnterButton.addEventListener(`click`,()=>{
-
-                        document.querySelectorAll(`.InputSelectors`).forEach((Selector)=>{
-
-                            console.log(Selector.checked.value)
-
-
-
-                        })
-
-
-                     
-                        Book.push({
-                            BookName: document.querySelector(`.input-BookName`).value,
-                            Author:  document.querySelector(`.input-Author`).value,
-                            Pages: document.querySelector(`.input-Pages`).value, 
-                        })
-            
-                        ButtonInput.innerText = `Add New Book`;
-                        RenderTheBooks();
-    
-
-
-                    })
+               
 
 
                 })
 
-                input.addEventListener(`keydown`,(event)=>{
+                //document.querySelector(`.input-BookName`)
+
+
+                document.querySelector(`.Enter-Button`).addEventListener(`click`,()=>{
+
+
+
+
+                    //let RadioSelectorValue 
+
+                    /*document.querySelectorAll(`input[type=radio]:checked`).forEach((selected)=>{
+
+                       RadioSelectorValue = (selected.value)
+
+
+
+                    })*/
+
+                       Book.push({
+                        BookName: document.querySelector(`.input-BookName`).value,
+                        Author:  document.querySelector(`.input-Author`).value,
+                        Pages: document.querySelector(`.input-Pages`).value, 
+                        //Status: RadioSelectorValue
+                    })
+                  
+            
+        
+                    //document.querySelector(`.add-button-books`).innerText = `Add New Book`;
+                    FillForm.classList.remove(`display-list`)
+
+                    RenderTheBooks();
+
+
+
+                })
+
+            
+
+
+
+
+                /*input.addEventListener(`keydown`,(event)=>{
         
                     if(event.key === `Enter`){
-    
-    
-    
+
+                        
+                        let RadioSelectorValue 
+
+                        document.querySelectorAll(`input[type=radio]:checked`).forEach((selected)=>{
+
+                           RadioSelectorValue = (selected.value)
+
+
+
+                        })
+
+                      
                      
                         Book.push({
                             BookName: document.querySelector(`.input-BookName`).value,
                             Author:  document.querySelector(`.input-Author`).value,
                             Pages: document.querySelector(`.input-Pages`).value, 
+                            Status: RadioSelectorValue
                         })
             
-
-                        ButtonInput.innerText = `Add New Book`;
+                        document.querySelector(`.add-button-books`).innerText = `Add New Book`;
                         RenderTheBooks();
     
             
                     }
             
             
-                })
+                })*/
             
-            })
+    }    })
         
-       
+        
         
         
         }
         
-        })
         
-    })
-}
 
 
 RenderTheBooks();
@@ -104,13 +121,14 @@ let Index;
 Book.forEach((IndBook,index)=>{
 
 
-TheHtml = `<div class="Book-formed">
+TheHtml = `<div class="Book-formed ">
 
 <div> Book Name: ${IndBook.BookName} </div>
 <div> Book Author: ${IndBook.Author} </div>
 <div> Book page: ${IndBook.Pages} </div>
-<div>Reading Status: </div>
+<div class="Book-formed-${index}">Reading Status: ${IndBook.Status} </div>
 <button data-delete-no="${index}" class="DeleteButton" > Delete Button </button>
+<button data-status-no="${index}"  class="status-change" >Change Status</button>
 </div>`
 
 Index = index
@@ -118,7 +136,6 @@ Index = index
 })   
 
   document.querySelector (`.book-section`).innerHTML += `<div class="books" data-index-no="${Index}" >${TheHtml}</div>`
-  AddingTheListener();
 
   document.querySelectorAll(`.DeleteButton`).forEach((DeleteButton)=>{
 
@@ -152,6 +169,28 @@ Index = index
 
     })
 
+
+
+  })
+
+  document.querySelectorAll(`.status-change`).forEach((button)=>{
+
+    button.addEventListener(`click`,()=>{
+
+        if(document.querySelector(`.Book-formed-${button.dataset.statusNo}`).innerText === `Reading Status: Read`){
+
+
+            document.querySelector(`.Book-formed-${button.dataset.statusNo}`).innerText = `Reading Status: Not Readed`
+
+
+        }else{
+
+document.querySelector(`.Book-formed-${button.dataset.statusNo}`).innerText = `Reading Status: Read`
+
+        }
+
+
+    })
 
 
   })

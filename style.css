@@ -41,3 +41,72 @@ justify-content: center;
 
 
 }
+
+.fill-form{
+
+    position: fixed;
+    display: flex;
+    font-size: 70px;
+    margin-left: 400px;
+    flex-direction: column;
+    border-style: solid;
+    padding: 50px;
+    display: none;
+
+
+}
+
+.display-list{
+
+    display: block;
+
+
+}
+
+
+.input-fill{
+
+        font-size: 70px;
+
+
+}
+
+.inner-div{
+
+    display: flex;
+    justify-content: space-between;
+    column-gap: 50px;
+
+}
+
+.Enter-Button{
+
+    position: fixed;
+    margin-left: 600px;
+    margin-top: 20px;
+
+}
+
+.reading-status{
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 100px;
+
+}
+
+.radio{
+
+    transform: scale(3);
+
+}
+
+
+.selector-click{
+
+    display: flex;
+    column-gap: 50px;
+
+
+
+}
