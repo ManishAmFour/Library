@@ -1,4 +1,4 @@
-let Book = [{BookName: `The Hobbi`,
+let Book = [{BookName: `The Hobbit`,
              Author: `J.R.R Tolkien`,   
              Pages: `295 pages`,       
              Status : `Read`,
@@ -13,15 +13,18 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
             
 
             let FillForm = document.querySelector(`.fill-form`);
-            let TheCloseButton = document.querySelector(`.close-change`)
             FillForm.classList.add(`display-list`);
-            TheCloseButton.classList.add(`close-change-changes`)
+            document.querySelector(`.Close-Button`).classList.add(`Close-Button-after`)
+            document.querySelector(`.book-section`).classList.add(`book-section-change`)
 
-            document.querySelector(`.close-change-changes`).addEventListener(`click`,()=>{
+
+            document.querySelector(`.Close-Button`).addEventListener(`click`,()=>{
 
                 document.querySelector(`.fill-form`).classList.remove(`display-list`);
         
-                document.querySelector(`.close-change`).classList.remove(`close-change-changes`);
+                document.querySelector(`.Close-Button`).classList.remove(`Close-Button-after`);
+                document.querySelector(`.book-section`).classList.remove(`book-section-change`)
+
                 
         
              })
@@ -58,7 +61,8 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
  
  
             document.querySelector(`.fill-form`).classList.remove(`display-list`);
-            document.querySelector(`.close-change`).classList.remove(`close-change-changes`);
+            document.querySelector(`.Close-Button`).classList.remove(`Close-Button-after`);
+            document.querySelector(`.book-section`).classList.remove(`book-section-change`)
 
             RenderTheBooks();
             document.querySelector(`.input-BookName`).value = `` 
@@ -123,7 +127,8 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
 
 
            document.querySelector(`.fill-form`).classList.remove(`display-list`);
-           document.querySelector(`.close-change`).classList.remove(`close-change-changes`);
+           document.querySelector(`.Close-Button`).classList.remove(`Close-Button-after`);
+           document.querySelector(`.book-section`).classList.remove(`book-section-change`)
 
            RenderTheBooks();
            document.querySelector(`.input-BookName`).value = ``;
@@ -176,9 +181,8 @@ TheHtml = `<div class="Book-formed Book-Details-${index}">
 <div class="Author-Name-${index} Absolute-Author-Name" > <div class="Book-Author-Pre"> Book Author:</div><div class="Book-Author">${IndBook.Author}</div></div>
 <div class="Page-Number-${index} Absolute-Page-Number" ><div class="Book-Page-Pre">  Book page:</div><div class="Book-Page">${IndBook.Pages}</div></div>
 <div class="Book-formed-${index} Absolute-Reading-Name"><div class="Book-Reading-Pre"> Reading status:</div><div class="Book-Reading">${IndBook.Status}</div></div>
-<button data-delete-no="${index}" class="DeleteButton" > Delete Button </button>
-<button data-status-no="${index}"  class="status-change" >Change Status</button>
-<button class= "close-change" > Close Button </button>
+<button data-delete-no="${index}" class="DeleteButton" > <img style="height: 30px;"  src="remove.jpg"> </button>
+<button data-status-no="${index}"  class="status-change" ><img style="height: 30px;" src="reuse.png"></button>
 </div>`
 
 Index = index

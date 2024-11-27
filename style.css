@@ -1,5 +1,6 @@
 .Heading{
 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: flex;  
     justify-content: center;
     font-size: 100px;
@@ -8,22 +9,91 @@
 
 }
 
+.add-button-image{
+
+    height: 20px;
+
+
+}
+
+
+
+.Close-Button{
+
+    display: none;
+    position: fixed;
+    left: 1630px;
+    top: 200px;
+    background-color: white;
+    border-style: none;
+
+
+}
+
+
+
+.Close-Button-after{
+
+    animation: listAppearing 3s alternate ;
+    background-color: white;
+    border-style: none;
+    display: block;
+    position: fixed;
+    left: 1630px;
+    top: 200px;
+
+
+
+
+
+}
+
+.Close-Button-after:hover{
+
+    cursor: pointer;
+
+
+}
+
+
+.close-button-image{
+
+    height: 30px;
+
+}
+
+
+
 .book-section{
 
-     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    justify-content: space-between;
-    row-gap: 80px;
+    display: grid;
+   grid-template-columns: repeat(3,1fr);
+   justify-content: space-between;
+   row-gap: 80px;
 margin-left: 180px;
+
 }
+
+
+.book-section-change{
+
+
+    display: none;
+ 
+
+}
+
+
+
 
 .books{
 
 position: relative;
 padding-right: 0px;  
 display: flex;
-/*justify-content: center; */ 
+/*justify-content: center; */
 border-style: solid;
+border-radius: 30px;
 display: inline-block;
 max-width: 300px;
 min-height: 200px;
@@ -34,14 +104,79 @@ max-height: 200px;
 }
 
 
+.books:hover{
+
+    animation: example 1s alternate ;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
+
+}
+
+@keyframes example {
+
+    0%{
+
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+
+
+    }
+
+    100%{
+
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
+
+
+    }
+
+
+
+    
+}
+
+
+
+
 .add-button-books{
 
     position: fixed;
     margin-left: 865px;
     margin-top: -50px;
+    background-color: white;
+    border-style: none;
+    cursor: pointer;
 
 
 }
+
+.add-button-books:hover{
+
+    animation: example2 1s alternate ;
+    box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+
+
+
+}
+
+
+@keyframes example2 {
+
+    0%{
+
+        box-shadow: 1px 0px 0px 10px rgba(0,0,0,0);
+
+    }
+
+    100%{
+
+        box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+
+    }
+
+
+
+    
+}
+
+
 
 .book-grid{
 
@@ -72,23 +207,52 @@ max-height: 200px;
     border-style: solid;
     padding: 50px;
     display: none;
-    background-color: blue;
+    opacity: 0;
+    /*background-color: blue;*/
 
 
 }
 
 .display-list{
 
+    animation: listAppearing 3s alternate ;
+    position: fixed;
+    display: flex;
+    font-size: 70px;
+    margin-left: 260px;
+    flex-direction: column;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 50px;
+    display: none;
+    /*background-color: blue;*/
+    opacity: 1;
     display: block;
 
 
 }
 
+@keyframes listAppearing {
+
+ 0%{
+
+    opacity: 0;
+
+ }
+
+ 100%{
+
+    opacity: 1;
+
+}
+
+    
+}
+
 
 .input-fill{
 
-        font-size: 70px;
-
+        font-size: 50px;
 
 }
 
@@ -153,14 +317,19 @@ max-height: 200px;
 .DeleteButton{
 
 
+    background-color: white;
     position: absolute;
     top: 150px;
     left: 180px;
+    border-style: none;
 
 }
 
 .status-change{
 
+    background-color: white;
+    border-style: none;
+    left: 60px;
     position: absolute;
     top: 150px;
 
@@ -169,7 +338,7 @@ max-height: 200px;
 .close-change{
 
     position: absolute;
-    left: 1420px;
+    left: 1400px;
     bottom: 160px;
     display: none;
     
@@ -203,6 +372,19 @@ display: flex;
     position: absolute;
     left: 120px;
 
+
+
+}
+.Book-Reading{
+
+    left: 130px;
+
+
+}
+
+.generated-button{
+
+height: 10px;
 
 
 }
