@@ -10,18 +10,24 @@
 
 .book-section{
 
-    display: grid;
+     display: grid;
     grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
     row-gap: 80px;
-    
+margin-left: 180px;
 }
 
 .books{
 
+position: relative;
 padding-right: 0px;  
 display: flex;
-justify-content: center;  
-
+/*justify-content: center; */ 
+border-style: solid;
+display: inline-block;
+max-width: 300px;
+min-height: 200px;
+max-height: 200px;
 
 
 
@@ -47,6 +53,8 @@ justify-content: center;
 
 .Book-formed{
 
+    margin-top: 20px;
+    margin-left: 15px;
     display: flex;
     flex-direction: column;
 
@@ -119,6 +127,81 @@ justify-content: center;
 
     display: flex;
     column-gap: 50px;
+
+
+
+}
+
+.Book-Name-full{
+
+
+    display: flex;
+
+}
+
+
+
+.Book-Name{
+
+    position: absolute;
+         left: 120px;
+    ;
+
+
+}
+
+.DeleteButton{
+
+
+    position: absolute;
+    top: 150px;
+    left: 180px;
+
+}
+
+.status-change{
+
+    position: absolute;
+    top: 150px;
+
+}
+
+.close-change{
+
+    position: absolute;
+    left: 1420px;
+    bottom: 160px;
+    display: none;
+    
+
+
+}
+
+.close-change-changes{
+
+    position: absolute;
+    left: 1420px;
+    bottom: 160px;
+    display: block;
+    
+
+
+}
+
+
+.Absolute-Author-Name , .Absolute-Page-Number , .Absolute-Reading-Name  {
+
+
+display: flex;
+
+
+}
+
+
+.Book-Author , .Book-Page , .Book-Reading {
+
+    position: absolute;
+    left: 120px;
 
 
 

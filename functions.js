@@ -1,4 +1,4 @@
-let Book = [{BookName: `The Hobbit`,
+let Book = [{BookName: `The Hobbi`,
              Author: `J.R.R Tolkien`,   
              Pages: `295 pages`,       
              Status : `Read`,
@@ -13,10 +13,20 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
             
 
             let FillForm = document.querySelector(`.fill-form`);
-
+            let TheCloseButton = document.querySelector(`.close-change`)
             FillForm.classList.add(`display-list`);
+            TheCloseButton.classList.add(`close-change-changes`)
 
-               
+            document.querySelector(`.close-change-changes`).addEventListener(`click`,()=>{
+
+                document.querySelector(`.fill-form`).classList.remove(`display-list`);
+        
+                document.querySelector(`.close-change`).classList.remove(`close-change-changes`);
+                
+        
+             })
+
+
               
         })
         
@@ -41,14 +51,41 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
              Status: TheValue
          })
 
+         if(document.querySelector(`.input-BookName`).value !== `` && document.querySelector(`.input-BookName`).value !== `` && document.querySelector(`.input-Author`).value !== ``&&
+         document.querySelector(`.input-Pages`).value !== ``
+ 
+        ){
+ 
+ 
+            document.querySelector(`.fill-form`).classList.remove(`display-list`);
+            document.querySelector(`.close-change`).classList.remove(`close-change-changes`);
+
+            RenderTheBooks();
+            document.querySelector(`.input-BookName`).value = `` 
+            
+            document.querySelector(`.input-BookName`).value = `` 
+            
+            document.querySelector(`.input-Author`).value = ``
+
+         document.querySelector(`.input-Pages`).value = ``
+ 
+ 
+        }else{
+ 
+            alert(`The fields are empty`)
+ 
+        }
+
        
-         document.querySelector(`.input-BookName`).value = ``;
-         document.querySelector(`.input-Author`).value = ``;
+        /*document.querySelector(`.input-BookName`).value !== `` 
+            
+        document.querySelector(`.input-BookName`).value !== `` 
+        
+        document.querySelector(`.input-Author`).value !== ``
 
-        document.querySelector(`.input-Pages`).value = ``;
+     document.querySelector(`.input-Pages`).value !== ``*/
 
-         document.querySelector(`.fill-form`).classList.remove(`display-list`);
-         RenderTheBooks();
+      
 
 
      })
@@ -77,14 +114,29 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
          })
 
        
-         document.querySelector(`.input-BookName`).value = ``;
-         document.querySelector(`.input-Author`).value = ``;
+        
 
-        document.querySelector(`.input-Pages`).value = ``;
+        if(document.querySelector(`.input-BookName`).value !== ``  && document.querySelector(`.input-Author`).value !== ``&&
+        document.querySelector(`.input-Pages`).value !== ``
 
-         document.querySelector(`.fill-form`).classList.remove(`display-list`);
-         RenderTheBooks();
+       ){
 
+
+           document.querySelector(`.fill-form`).classList.remove(`display-list`);
+           document.querySelector(`.close-change`).classList.remove(`close-change-changes`);
+
+           RenderTheBooks();
+           document.querySelector(`.input-BookName`).value = ``;
+           document.querySelector(`.input-Author`).value = ``;
+  
+          document.querySelector(`.input-Pages`).value = ``;
+
+
+       }else{
+
+           alert(`The fields are empty`)
+
+       }
 
 
 
@@ -95,6 +147,9 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
 
 
      })
+
+     /**/
+
 
         
     }
@@ -117,13 +172,13 @@ Book.forEach((IndBook,index)=>{
 
 TheHtml = `<div class="Book-formed Book-Details-${index}">
 
-<div class="Book-Name-${index}" > Book Name: ${IndBook.BookName} </div>
-<div class="Author-Name-${index}" > Book Author: ${IndBook.Author} </div>
-<div class="Page-Number-${index}" > Book page: ${IndBook.Pages} </div>
-<div class="Book-formed-${index}">Reading Status: ${IndBook.Status}</div>
+<div class="Book-Name-${index} Book-Name-full" ><div class="Book-Name-Pre"> Book Name:</div> <div class="Book-Name">${IndBook.BookName}</div></div>
+<div class="Author-Name-${index} Absolute-Author-Name" > <div class="Book-Author-Pre"> Book Author:</div><div class="Book-Author">${IndBook.Author}</div></div>
+<div class="Page-Number-${index} Absolute-Page-Number" ><div class="Book-Page-Pre">  Book page:</div><div class="Book-Page">${IndBook.Pages}</div></div>
+<div class="Book-formed-${index} Absolute-Reading-Name"><div class="Book-Reading-Pre"> Reading status:</div><div class="Book-Reading">${IndBook.Status}</div></div>
 <button data-delete-no="${index}" class="DeleteButton" > Delete Button </button>
 <button data-status-no="${index}"  class="status-change" >Change Status</button>
-<button data-edit-no="${index}" class="edit-change" > Edit </button>
+<button class= "close-change" > Close Button </button>
 </div>`
 
 Index = index
@@ -192,64 +247,6 @@ document.querySelector(`.Book-formed-${button.dataset.statusNo}`).innerText = `R
   })
 
   
-document.querySelectorAll(`.edit-change`).forEach((editButton,index)=>{
-
-
-   editButton.addEventListener(`click`,()=>{
-
-    if(editButton.innerText === `Edit`){  
-
-    document.querySelector(`.Book-Name-${index}`).innerHTML = `Book Name: <input class="edited-name">`
-    document.querySelector(`.Author-Name-${index}`).innerHTML = `Book Author: <input class="edited-author">`
-    document.querySelector(`.Page-Number-${index}`).innerHTML = ` Book page: <input class="edited-pages">`
-
-        editButton.innerText = `Save`
-
-    }else{
-
-        if(document.querySelector(`.edited-name`).value !== `` && document.querySelector(`.edited-author`).value !== `` &&
-    
-        document.querySelector(`.edited-pages`).value !== ``
-    
-    ){
-
-
-        document.querySelector(`.Book-Name-${index}`).innerHTML =`Book Name: ${document.querySelector(`.edited-name`).value}`
-        document.querySelector(`.Author-Name-${index}`).innerHTML = `Book Author: ${document.querySelector(`.edited-author`).value}`
-        document.querySelector(`.Page-Number-${index}`).innerHTML = `Book page: ${document.querySelector(`.edited-pages`).value}`
-    
-
-
-
-        editButton.innerText = `Edit`
-
-
-
-
-
-        }else{
-
-            alert(`please fill in the entries`)
-
-
-        }
-
-
-
-        
-
-        
-
-
-    }
- 
-
-
-
-   })
-    
-
-})
 
   
 
