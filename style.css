@@ -1,5 +1,5 @@
 .Heading{
-
+    
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: flex;  
     justify-content: center;
@@ -11,7 +11,7 @@
 
 .black-line{
 
-    position: fixed;
+    position: absolute;
     left: -13px;
     border-style: solid;
     background-color: black;
@@ -158,7 +158,7 @@ background-color: rgb(242, 242, 242);
 
 .add-button-books{
 
-    position: fixed;
+    position: absolute;
     margin-left: 923px;
     margin-top: -50px;
     background-color: white;

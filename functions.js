@@ -1,4 +1,4 @@
-let Book = [{BookName: `The Hobbit`,
+let Book =  [{BookName: `The Hobbit`,
              Author: `J.R.R Tolkien`,   
              Pages: `295 pages`,       
              Status : `Not Readed`,
@@ -56,6 +56,8 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
              Status: TheValue
          })
 
+         localStorage.setItem(`Book`, JSON.stringify(Book))
+
          if(document.querySelector(`.input-BookName`).value !== `` && document.querySelector(`.input-BookName`).value !== `` && document.querySelector(`.input-Author`).value !== ``&&
          document.querySelector(`.input-Pages`).value !== `` && TheValue !== undefined
  
@@ -83,13 +85,7 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
         }
 
        
-        /*document.querySelector(`.input-BookName`).value !== `` 
-            
-        document.querySelector(`.input-BookName`).value !== `` 
         
-        document.querySelector(`.input-Author`).value !== ``
-
-     document.querySelector(`.input-Pages`).value !== ``*/
 
       
 
@@ -118,6 +114,8 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
              Pages: document.querySelector(`.input-Pages`).value, 
              Status: TheValue
          })
+
+         localStorage.setItem(`Book`, JSON.stringify(Book))
 
        
         
