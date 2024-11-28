@@ -1,7 +1,7 @@
 let Book = [{BookName: `The Hobbit`,
              Author: `J.R.R Tolkien`,   
              Pages: `295 pages`,       
-             Status : `Read`,
+             Status : `Not Readed`,
 }]
 
 
@@ -30,6 +30,8 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
              })
 
 
+           
+
               
         })
         
@@ -55,11 +57,11 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
          })
 
          if(document.querySelector(`.input-BookName`).value !== `` && document.querySelector(`.input-BookName`).value !== `` && document.querySelector(`.input-Author`).value !== ``&&
-         document.querySelector(`.input-Pages`).value !== ``
+         document.querySelector(`.input-Pages`).value !== `` && TheValue !== undefined
  
         ){
  
- 
+            
             document.querySelector(`.fill-form`).classList.remove(`display-list`);
             document.querySelector(`.Close-Button`).classList.remove(`Close-Button-after`);
             document.querySelector(`.book-section`).classList.remove(`book-section-change`)
@@ -121,7 +123,7 @@ document.querySelector(`.add-button-books`).addEventListener(`click`,()=>{
         
 
         if(document.querySelector(`.input-BookName`).value !== ``  && document.querySelector(`.input-Author`).value !== ``&&
-        document.querySelector(`.input-Pages`).value !== ``
+        document.querySelector(`.input-Pages`).value !== `` && TheValue !== undefined
 
        ){
 
@@ -180,7 +182,7 @@ TheHtml = `<div class="Book-formed Book-Details-${index}">
 <div class="Book-Name-${index} Book-Name-full" ><div class="Book-Name-Pre"> Book Name:</div> <div class="Book-Name">${IndBook.BookName}</div></div>
 <div class="Author-Name-${index} Absolute-Author-Name" > <div class="Book-Author-Pre"> Book Author:</div><div class="Book-Author">${IndBook.Author}</div></div>
 <div class="Page-Number-${index} Absolute-Page-Number" ><div class="Book-Page-Pre">  Book page:</div><div class="Book-Page">${IndBook.Pages}</div></div>
-<div class="Book-formed-${index} Absolute-Reading-Name"><div class="Book-Reading-Pre"> Reading status:</div><div class="Book-Reading">${IndBook.Status}</div></div>
+<div class="Book-formed-${index} Absolute-Reading-Name"><div class="Book-Reading-Pre">Reading status:</div><div class="Book-Reading">${IndBook.Status}</div></div>
 <button data-delete-no="${index}" class="DeleteButton" > <img style="height: 30px;"  src="remove.jpg"> </button>
 <button data-status-no="${index}"  class="status-change" ><img style="height: 30px;" src="reuse.png"></button>
 </div>`
@@ -232,15 +234,15 @@ Index = index
 
     button.addEventListener(`click`,()=>{
 
-        if(document.querySelector(`.Book-formed-${button.dataset.statusNo}`).innerText === `Reading Status: Read`){
+        if(document.querySelector(`.Book-formed-${button.dataset.statusNo}`).innerText === `Reading status: Read`){
 
 
-            document.querySelector(`.Book-formed-${button.dataset.statusNo}`).innerText = `Reading Status: Not Readed`
+            document.querySelector(`.Book-formed-${button.dataset.statusNo}`).innerText = `Reading status: Not Readed`
 
 
         }else{
 
-document.querySelector(`.Book-formed-${button.dataset.statusNo}`).innerText = `Reading Status: Read`
+document.querySelector(`.Book-formed-${button.dataset.statusNo}`).innerText = `Reading status: Read`
 
         }
 
