@@ -1,434 +1,283 @@
-.Heading{
-    
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    display: flex;  
-    justify-content: center;
-    font-size: 100px;
-    margin-top: -13px;
-    color: black
-
+.Heading {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  margin-top: -13px;
+  color: black;
 }
 
-.black-line{
-
-    position: absolute;
-    left: -13px;
-    border-style: solid;
-    background-color: black;
-    height: 0.00001px;
-    width: 500000px;
-    top: 115px;
-
-
+.black-line {
+  position: absolute;
+  left: -13px;
+  border-style: solid;
+  background-color: black;
+  height: 0.00001px;
+  width: 500000px;
+  top: 115px;
 }
 
-.feature-button{
-
-    background-color: white;
-    border-style: none;
-    height: 70px;
-
+.feature-button {
+  background-color: white;
+  border-style: none;
+  height: 70px;
 }
 
-.add-button-image{
-
-    height: 20px;
-
-
+.add-button-image {
+  height: 20px;
 }
 
+.Close-Button {
+  display: none;
+  position: absolute;
+  right: 3px;
+  top: 3px;
 
-
-.Close-Button{
-
-    display: none;
-    position: fixed;
-    left: 1630px;
-    top: 200px;
-    background-color: white;
-    border-style: none;
-
-
+  background-color: white;
+  border-style: none;
 }
 
-
-
-.Close-Button-after{
-
-    animation: listAppearing 3s alternate ;
-    background-color: white;
-    border-style: none;
-    display: block;
-    position: fixed;
-    left: 1630px;
-    top: 200px;
-
-
-
-
-
+.Close-Button-after {
+  animation: listAppearing 3s alternate;
+  background-color: white;
+  border-style: none;
+  display: flex;
 }
 
-.Close-Button-after:hover{
-
-    cursor: pointer;
-
-
+.Close-Button-after:hover {
+  cursor: pointer;
 }
 
-
-.close-button-image{
-
-    height: 30px;
-
+.close-button-image {
+  height: 30px;
 }
 
-
-
-.book-section{
-
-    display: grid;
-   grid-template-columns: repeat(3,1fr);
-   justify-content: space-between;
-   row-gap: 80px;
-margin-left: 180px;
-
+.book-section {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  row-gap: 80px;
 }
 
-
-.book-section-change{
-
-
-    display: none;
- 
-
+.book-section-change {
+  display: none;
 }
 
-
-
-
-.books{
-
-position: relative;
-padding-right: 0px;  
-display: flex;
-border-style: solid;
-border-radius: 30px;
-display: inline-block;
-max-width: 300px;
-min-height: 200px;
-max-height: 200px;
-background-color: rgb(242, 242, 242);
-
-
-
+.books {
+  position: relative;
+  padding-right: 0px;
+  display: flex;
+  justify-content: center;
 }
 
-
-.books:hover{
-
-    animation: example 1s alternate ;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
-
+.Book-formed:hover {
+  animation: example 1s alternate;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes example {
+  0% {
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0);
+  }
 
-    0%{
-
-        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
-
-
-    }
-
-    100%{
-
-        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
-
-
-    }
-
-
-
-    
+  100% {
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  }
 }
 
-
-
-
-.add-button-books{
-
-    position: absolute;
-    margin-left: 923px;
-    margin-top: -50px;
-    background-color: white;
-    border-style: none;
-    cursor: pointer;
-
-
+.add-button-div {
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
 }
 
-.add-button-books:hover{
-
-    animation: example2 1s alternate ;
-    box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
-
-
-
+.add-button-books:hover {
+  animation: example2 1s alternate;
+  box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.75);
 }
-
 
 @keyframes example2 {
+  0% {
+    box-shadow: 1px 0px 0px 10px rgba(0, 0, 0, 0);
+  }
 
-    0%{
-
-        box-shadow: 1px 0px 0px 10px rgba(0,0,0,0);
-
-    }
-
-    100%{
-
-        box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
-
-    }
-
-
-
-    
+  100% {
+    box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.75);
+  }
 }
 
-
-
-.book-grid{
-
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-
-
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.Book-formed{
-
-    margin-top: 20px;
-    margin-left: 15px;
+.Author-name-0{
     display: flex;
-    flex-direction: column;
-
-
-
+    justify-content: space-between;
 }
 
-.fill-form{
-
-    position: fixed;
-    display: flex;
-    font-size: 70px;
-    margin-left: 260px;
-    flex-direction: column;
-    border-style: solid;
-    padding: 50px;
-    display: none;
-    opacity: 0;
-    height: 400px;
-    /*background-color: blue;*/
-
-
+.Book-formed {
+  background-color: rgb(214, 214, 214);
+  border-style: solid;
+  border-radius: 20px;
+  min-width: 200px;
+  padding: 30px;
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
 }
 
-.display-list{
+.button-div {
+  display: flex;
+  justify-content: space-between;
+}
 
-    animation: listAppearing 3s alternate ;
-    position: fixed;
-    display: flex;
-    font-size: 70px;
-    margin-left: 260px;
-    flex-direction: column;
-    border-style: solid;
-    border-radius: 10px;
-    padding: 50px;
-    display: none;
-    /*background-color: blue;*/
-    opacity: 1;
-    display: block;
+.main-form-div {
+  display: flex;
+  justify-content: center;
+}
 
+.fill-form {
+  display: flex;
+  margin-top: 40px;
+  font-size: 70px;
+  flex-direction: column;
+  border-style: solid;
+  padding: 50px;
+  display: none;
+  opacity: 0;
+  height: 400px;
+  /*background-color: blue;*/
+}
 
+.title-reading {
+  min-width: 500px;
+}
+
+.display-list {
+  animation: listAppearing 3s alternate;
+  position: fixed;
+  display: flex;
+  font-size: 70px;
+  flex-direction: column;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 50px;
+  display: none;
+  /*background-color: blue;*/
+  opacity: 1;
+  display: block;
 }
 
 @keyframes listAppearing {
-
- 0%{
-
+  0% {
     opacity: 0;
+  }
 
- }
-
- 100%{
-
+  100% {
     opacity: 1;
-
+  }
 }
 
-    
+.input-fill {
+  font-size: 50px;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
 }
 
+.inner-div {
+  display: flex;
 
-.input-fill{
-
-        font-size: 50px;
-
+  justify-content: space-between;
+  column-gap: 50px;
 }
 
-.inner-div{
-
-    display: flex;
-    justify-content: space-between;
-    column-gap: 50px;
-
+.Enter-Button {
+  position: fixed;
+  border-style: solid;
+  background-color: white;
+  margin-left: 550px;
+  margin-top: 20px;
 }
 
-.Enter-Button{
-
-    position: fixed;
-    border-style: solid;
-    background-color: white;
-    margin-left: 550px;
-    margin-top: 20px;
-
+.Enter-Button:hover {
+  cursor: pointer;
 }
 
-.Enter-Button:hover{
-
-    cursor: pointer;
-
-
+.reading-status {
+  display: flex;
+  min-width: 500px;
+  flex-direction: row;
+  column-gap: 100px;
 }
 
-.reading-status{
-
-    display: flex;
-    flex-direction: row;
-    column-gap: 100px;
-
+.radio {
+  transform: scale(3);
 }
 
-.radio{
-
-    transform: scale(3);
-
+.selector-click {
+  display: flex;
+  min-width: 100px;
+  column-gap: 50px;
 }
 
-
-.selector-click{
-
-    display: flex;
-    column-gap: 50px;
-
-
-
+.Book-Name-full {
+  display: flex;
+  justify-content: space-between;
 }
 
-.Book-Name-full{
+.DeleteButton {
+  background-color: rgb(242, 242, 242);
 
-
-    display: flex;
-
+  border-style: none;
 }
 
-
-
-.Book-Name{
-
-    position: absolute;
-         left: 120px;
-    ;
-
-
+.status-change {
+  background-color: rgb(242, 242, 242);
+  border-style: none;
 }
 
-.DeleteButton{
+.DeleteButton:hover,
+.status-change:hover {
+  animation: example2 1s alternate;
+  box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.75);
 
-
-    background-color: rgb(242, 242, 242);
-    position: absolute;
-    top: 150px;
-    left: 180px;
-    border-style: none;
-
+  cursor: pointer;
 }
 
-
-
-.status-change{
-
-    background-color: rgb(242, 242, 242);
-    border-style: none;
-    left: 60px;
-    position: absolute;
-    top: 150px;
-
+.close-change {
+  position: absolute;
+  left: 1400px;
+  bottom: 160px;
+  display: none;
 }
 
-.DeleteButton:hover, .status-change:hover{
-
-    animation: example2 1s alternate ;
-    box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
-
-    cursor: pointer;
-
-
+.close-change-changes {
+  position: absolute;
+  left: 1420px;
+  bottom: 160px;
+  display: block;
 }
 
-.close-change{
-
-    position: absolute;
-    left: 1400px;
-    bottom: 160px;
-    display: none;
-    
-
-
+.Absolute-Author-Name,
+.Absolute-Page-Number,
+.Absolute-Reading-Name {
+  display: flex;
+  justify-content: space-between;
 }
 
-.close-change-changes{
-
-    position: absolute;
-    left: 1420px;
-    bottom: 160px;
-    display: block;
-    
-
-
+.Book-Reading {
+  left: 130px;
 }
 
-
-.Absolute-Author-Name , .Absolute-Page-Number , .Absolute-Reading-Name  {
-
-
-display: flex;
-
-
+.generated-button {
+  height: 10px;
 }
 
-
-.Book-Author , .Book-Page , .Book-Reading {
-
-    position: absolute;
-    left: 120px;
-
-
-
-}
-.Book-Reading{
-
-    left: 130px;
-
-
+.noread-status {
+  min-width: 300px;
 }
 
-.generated-button{
-
-height: 10px;
-
-
-}
 

@@ -1,59 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body style="font-family: Arial, Helvetica, sans-serif;
-background-color: white;
-
-">
-
-    <H1 class="Heading">Library</H1>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    style="font-family: Arial, Helvetica, sans-serif; background-color: white"
+  >
+    <h1 class="Heading">Library</h1>
 
     <div class="black-line"></div>
-
-    <button class="add-button-books"><img class="add-button-image"  src="360_F_541914132_uKzsRxqmtDlsgfL4mN7DRvWisyaQHgYf.jpg"></button>
-
-    <div class="fill-form" >
-
+    <div class="add-button-div">
+      <button class="add-button-books">
+        <img
+          class="add-button-image"
+          src="360_F_541914132_uKzsRxqmtDlsgfL4mN7DRvWisyaQHgYf.jpg"
+        />
+      </button>
+    </div>
+    <div class="main-form-div">
+      <div class="fill-form">
+        <button class="Close-Button">
+          <img class="close-button-image" src="close.webp" />
+        </button>
         <div class="inner-div">
-            <div>Book Name:</div>
-            <div><input class="input-bar input-fill input-book-name input-BookName" type="text"></div>
+          <div>Book Name:</div>
+          <div>
+            <input
+              class="input-bar input-fill input-book-name input-BookName"
+              type="text"
+            />
+          </div>
         </div>
         <div class="inner-div">
-            <div>Author:</div>
-        <div><input class="input-bar input-fill input-author-name input-Author" type="text" ></div>
-    </div>
+          <div>Author:</div>
+          <div>
+            <input
+              class="input-bar input-fill input-author-name input-Author"
+              type="text"
+            />
+          </div>
+        </div>
         <div class="inner-div">
-            <div>Pages:</div>
-           <div><input class="input-bar input-fill input-Pages-count input-Pages" type="number"></div> 
+          <div>Pages:</div>
+          <div>
+            <input
+              class="input-bar input-fill input-Pages-count input-Pages"
+              type="number"
+            />
+          </div>
         </div>
 
         <div class="reading-status">
-
-           <div>Reading Status:</div>
-            <div class="selector-click">Read <input class="radio" value="Read"  type="radio" name="options" ></div>
-            <div  class="selector-click">Not Read <input class="radio" value="Not Readed" type="radio"  name="options" ></div>
-
+          <div class="reading-status">
+            <p class="title-reading">Reading Status:</p>
+            <div class="selector-click">
+              <p class="read-status">Read</p>
+              <input class="radio" value="Read" type="radio" name="options" />
+            </div>
+            <div class="selector-click">
+              <p class="noread-status">Not Read</p>
+              <input
+                class="radio"
+                value="Not Readed"
+                type="radio"
+                name="options"
+              />
+            </div>
+          </div>
         </div>
-
-
-       <button class="Enter-Button"><img class="feature-button"  src="feature.png"></button> 
-
+        <button class="Enter-Button">
+          <img class="feature-button" src="feature.png" />
+        </button>
+      </div>
     </div>
 
-    <button class="Close-Button" ><img class="close-button-image"  src="close.webp"></button>
-
-    <div class="book-section">
-        
-       
-      
-
-    </div>
+    <div class="book-section"></div>
 
     <script src="functions.js"></script>
-</body>
+  </body>
 </html>

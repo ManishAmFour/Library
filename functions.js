@@ -181,8 +181,10 @@ TheHtml = `<div class="Book-formed Book-Details-${index}">
 <div class="Author-Name-${index} Absolute-Author-Name" > <div class="Book-Author-Pre"> Book Author:</div><div class="Book-Author">${IndBook.Author}</div></div>
 <div class="Page-Number-${index} Absolute-Page-Number" ><div class="Book-Page-Pre">  Book page:</div><div class="Book-Page">${IndBook.Pages}</div></div>
 <div class="Book-formed-${index} Absolute-Reading-Name"><div class="Book-Reading-Pre">Reading status:</div><div class="Book-Reading">${IndBook.Status}</div></div>
+<div class="button-div">
 <button data-delete-no="${index}" class="DeleteButton" > <img style="height: 30px;"  src="remove.jpg"> </button>
 <button data-status-no="${index}"  class="status-change" ><img style="height: 30px;" src="reuse.png"></button>
+</div>
 </div>`
 
 Index = index
