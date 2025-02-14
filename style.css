@@ -8,12 +8,12 @@
 }
 
 .black-line {
-  position: absolute;
-  left: -13px;
+  position: fixed;
   border-style: solid;
+  left: 0;
+  right:  0;
+  
   background-color: black;
-  height: 0.00001px;
-  width: 500000px;
   top: 115px;
 }
 
